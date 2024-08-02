@@ -1,0 +1,20 @@
+/* src/styles/App.css */
+.App {
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    margin-left: 15px;
+    padding: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+}

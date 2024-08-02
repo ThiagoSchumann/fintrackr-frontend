@@ -1,10 +1,9 @@
-// src/hooks/useDarkMode.js
 import { useEffect, useState } from "react";
 
 export const useDarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = localStorage.getItem("darkMode");
-    return savedMode ? JSON.parse(savedMode) : true;
+    return savedMode ? JSON.parse(savedMode) : false;
   });
 
   useEffect(() => {

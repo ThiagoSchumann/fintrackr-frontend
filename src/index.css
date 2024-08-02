@@ -5,100 +5,44 @@
 @tailwind utilities;
 
 /* Custom Styles */
-body {
-  font-family: 'Helvetica', sans-serif;
-}
-
-.sidebar {
-  @apply fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out;
-  border-right: 2px dotted #4B5563;
-  /* Adding dotted border */
-  overflow: hidden;
-  /* Ensure no default scrollbars */
-}
-
-.logo-container {
-  padding: 0.25rem 0;
-  /* Reduzir padding */
-}
-
-.sidebar ul {
-  padding: 0;
-  /* Remover padding */
-}
-
-.sidebar ul li {
-  @apply w-full;
-}
-
-.sidebar ul li a {
-  @apply flex items-center px-4 py-2 w-full;
-}
-
-.menu-btn {
-  @apply text-3xl m-4 md:text-2xl md:m-2;
-}
-
-.sidebar-open {
-  margin-left: 250px;
+.icon-container {
+  @apply w-6 h-6 flex justify-center items-center mr-3;
 }
 
 @media (max-width: 768px) {
   .sidebar {
     @apply w-56;
   }
-
-  .sidebar-open {
-    margin-left: 224px;
-  }
 }
 
-/* Dark Theme Styles */
-.dark .sidebar {
-  @apply bg-dark-lighter text-gray-lightest;
-}
-
-.dark .sidebar ul li:hover {
-  @apply bg-dark;
-}
-
-.dark .sidebar ul li a {
-  @apply text-gray-lightest;
-}
-
-.dark .menu-btn {
-  @apply border-gray-dark;
-}
-
-.dark .content {
-  @apply bg-dark-lightest text-gray-lightest;
+body {
+  @apply font-sans;
 }
 
 .dark body {
-  @apply bg-dark-lightest text-gray-lightest;
-}
-
-/* Light Theme Styles */
-.light .sidebar {
-  @apply bg-gray-100 text-gray-dark;
-}
-
-.light .sidebar ul li:hover {
-  @apply bg-gray-300;
-}
-
-.light .sidebar ul li a {
-  @apply text-gray-dark;
-}
-
-.light .menu-btn {
-  @apply border-gray-400;
-}
-
-.light .content {
-  @apply bg-white text-gray-900;
+  @apply bg-dark text-gray-lightest;
 }
 
 .light body {
-  @apply bg-white text-gray-900;
+  @apply bg-gray text-gray-dark;
+}
+
+/* Custom class for border-left width */
+@layer components {
+  .border-l-6 {
+    border-left-width: 6px;
+  }
+}
+
+/* Hover effect for sidebar items */
+/* .sidebar-item:hover {
+  @apply hover:bg-opacity-75;
+} */
+
+.sidebar-item-active {
+  @apply border-l-6 border-primary text-primary;
+}
+
+.sidebar-item-hover:hover {
+  @apply bg-dark-lightest;
 }
